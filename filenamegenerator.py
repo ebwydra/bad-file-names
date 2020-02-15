@@ -59,16 +59,22 @@ def get_version():
 def get_extra():
     r = random.randint(0,1) # might or might not be something extra
     if r == 1:
-        extra_list = ['final', 'FINAL', 'clean', 'new', 'old']
+        extra_list = ['final', 'FINAL', 'clean', 'new', 'old', 'updated', 'current']
         separators = [' ', '_', '-']
-        return random.choice(separators) + random.choice(extra_list)
+        result = random.choice(separators) + random.choice(extra_list)
+        r2 = random.randint(1,6)
+        if r2 == 1:
+            result += random.choice(separators) + random.choice(extra_list)
+        else:
+            pass
+        return result
 
     else:
         return ''
 
 ### Function that generates a string for the 'body' of the file name ###
 def get_filename():
-    filename_list = ['Untitled', 'data', 'presentation', 'memo', 'schedule', 'agenda', 'notes', 'tracking', 'meeting agenda', 'meeting notes', 'tracking spreadsheet', 'project', 'results', 'final results', 'attendance']
+    filename_list = ['Untitled', 'data', 'presentation', 'memo', 'schedule', 'agenda', 'notes', 'tracking', 'meeting agenda', 'meeting notes', 'tracking spreadsheet', 'project', 'results', 'final results', 'attendance', 'slides']
     return random.choice(filename_list)
 
 ### Putting it all together! ###
@@ -107,5 +113,5 @@ latest_date = datetime.datetime.strptime('2/29/2020', '%m/%d/%Y')
 ### Show me some results ###
 # i=0
 # while i < 10:
-#     print badfilename()
+#     print(badfilename())
 #     i += 1
