@@ -22,4 +22,4 @@ while True:
     result = badfilename()
     ## Send Tweet ##
     api.update_status(status = result)
-    time.sleep(60) # once a minute
+    time.sleep(60*60) # once an hour
