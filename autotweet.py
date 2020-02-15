@@ -16,11 +16,9 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-## Make a call to the badfilename() function ##
-result = badfilename()
-print(result)
-
-## Send Tweet ##
 while True:
+    ## Make a call to the badfilename() function ##
+    result = badfilename()
+    ## Send Tweet ##
     api.update_status(status = result)
     time.sleep(60) # once a minute
