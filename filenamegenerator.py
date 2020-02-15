@@ -47,7 +47,7 @@ def get_date(result_date):
 def get_version():
     r = random.randint(0,1) # might or might not be a version number
     if r == 1:
-        v = ['v', 'V', 'draft', 'DRAFT', 'version']
+        v = ['v', 'draft', 'DRAFT', 'version']
         nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         v_separators = ['', ' ', '-']
         v_str = random.choice(v) + random.choice(v_separators) + random.choice(nums)
@@ -59,7 +59,7 @@ def get_version():
 def get_extra():
     r = random.randint(0,1) # might or might not be something extra
     if r == 1:
-        extra_list = ['final', 'FINAL', 'clean', 'new', 'old', 'updated', 'current']
+        extra_list = ['final', 'FINAL', 'clean', 'new', 'old', 'updated', 'current', 'approved', 'revised', 'DRAFT']
         separators = [' ', '_', '-']
         result = random.choice(separators) + random.choice(extra_list)
         r2 = random.randint(1,6)
@@ -74,7 +74,7 @@ def get_extra():
 
 ### Function that generates a string for the 'body' of the file name ###
 def get_filename():
-    filename_list = ['Untitled', 'data', 'presentation', 'memo', 'schedule', 'agenda', 'notes', 'tracking', 'meeting agenda', 'meeting notes', 'tracking spreadsheet', 'project', 'results', 'final results', 'attendance', 'slides']
+    filename_list = ['Untitled', 'New Project', 'data', 'presentation', 'memo', 'schedule', 'agenda', 'notes', 'tracking', 'meeting agenda', 'meeting notes', 'tracking spreadsheet', 'project', 'results', 'final results', 'attendance', 'presentation slides', 'project']
     return random.choice(filename_list)
 
 ### Putting it all together! ###
@@ -102,6 +102,9 @@ def badfilename():
         result += random.choice(elem_separators) + version_str
     if len(extra_str) > 0:
         result += extra_str
+    r = random.randint(1,8)
+    if r == 1:
+        result = str.upper(result)
     result += format_str
 
     return result
