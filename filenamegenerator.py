@@ -4,7 +4,7 @@ import calendar
 
 ### Function that generates a string representing random file extension ###
 def get_format():
-    file_formats = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx','.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.bmp', '.gif', '.zip', '.mp3', '.jpg', '.rtf']
+    file_formats = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx','.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.bmp', '.gif', '.mp3', '.jpg', '.rtf']
 
     extension_str = random.choice(file_formats)
 
