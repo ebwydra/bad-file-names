@@ -23,4 +23,4 @@ print(result)
 ## Send Tweet ##
 while True:
     api.update_status(status = result)
-    time.sleep(60*60) # once an hour
+    time.sleep(60) # once a minute
