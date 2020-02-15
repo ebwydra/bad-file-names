@@ -1,6 +1,13 @@
 import tweepy
-from twitterauth import *
+# from twitterauth import *
+from os import environ
 from filenamegenerator import *
+
+consumer_key = environ['consumer_key']
+consumer_secret = environ['consumer_secret']
+access_token = environ['access_token']
+access_token_secret = environ['access_token_secret']
+
 
 ### Authentication of consumer key and consumer secret ##
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
